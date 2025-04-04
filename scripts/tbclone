@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+repo=$1
+
+if [[ -z $repo ]]; then
+    exit 0
+fi
+
+# Clone the repo first
+selected_name=`echo $repo | cut -d'/' -f 2 | cut -d'.' -f 1`
+selected=`echo $(pwd)/$selected_name`
+git clone "bitbucket:$repo" $selected
+
+tswitch $selected

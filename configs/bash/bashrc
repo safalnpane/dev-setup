@@ -1,0 +1,78 @@
+export EDITOR=nvim
+
+# Alias
+alias vim="nvim"
+alias l="ls -l"
+alias la="ls -la"
+alias ls="ls --color=auto"
+
+# Git
+gitclone () {
+  git clone github:$1 $2
+}
+
+gitbclone () {
+  git clone bitbucket:$1 $2
+}
+
+alias g="git"
+alias gs="g status"
+alias ga="git add"
+alias gclone="gitclone"
+alias gbclone="gitbclone"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gp="g push"
+alias gpl="g pull"
+alias gm="git merge"
+alias gch="git checkout"
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit"
+alias gd="git diff"
+alias gst="git stash"
+alias gchb="git checkout -b"
+
+# Tmux
+alias tn="tmux new -s"
+alias tl="tmux ls"
+alias ta="tmux attach -t"
+
+# Tree
+alias tree="tree --gitignore"
+alias treed="tree -d"
+alias 2tree="tree -L 2"
+
+# Docker
+alias dce="docker compose exec"
+alias dcu="docker compose up"
+alias dcd="docker compose down"
+alias de="docker exec"
+
+# Kubectl
+kusenamespace () {
+	kctl config set-context --current --namespace=$1
+}
+
+alias kctl="kubectl"
+alias kcontext="kctl config current-context"
+alias kcontexts="kctl config get-contexts"
+alias kusecontext="kctl config use-context"
+alias knamespaces="kctl get namespaces"
+alias kpods="kctl $KNAMESPACE get pods"
+alias klogs="kctl $KNAMESPACE logs"
+alias kapply="kctl $KNAMESPACE apply -f"
+alias mkctl="minikube kctl --"
+
+
+# Lazy source config
+alias reload="source ~/.zshrc"
+
+# Python is Python@3.12
+alias python=python3.12
+
+
+# Exports
+export GPG_TTY=$(tty)
+export PATH="$PATH:/opt/go/bin:/opt/nvim-linux-arm64/bin:$HOME/.local/bin/scripts:/opt/lua-language-server-3.13.9/bin"
+
+# Starship
+eval "$(starship init zsh)"

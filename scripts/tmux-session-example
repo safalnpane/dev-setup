@@ -1,0 +1,14 @@
+windows=("nvim" "term" "scratch" "jnotebook")
+
+# Create necessary windows
+for window in "${windows[@]:1}"; do
+	tmux new-window -dn "$window"
+	tmux send-keys -t "$window" "source .venv/bin/activate" c-M
+	tmux send-keys -t "$window" "export AWS_PROFILE=some-admin" c-M
+	tmux send-keys -t "$window" "clear" c-M
+done
+
+source .venv/bin/activate
+export AWS_PROFILE=some-admin
+vim .
+clear
