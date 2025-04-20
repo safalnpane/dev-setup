@@ -5,6 +5,7 @@ rm -f $HOME/.zshrc
 rm -f $HOME/.config/i3
 rm -f $HOME/.config/ghostty
 rm -f $HOME/.config/nvim
+rm -f $HOME/config/polybar
 rm -f $HOME/.local/bin/scripts
 
 # symlink the i3 config
@@ -18,6 +19,9 @@ ln -s $HOME/Developer/dev-setup/configs/tmux/tmux.conf $HOME/.tmux.conf
 
 # symlink the nvim directory
 ln -s $HOME/Developer/dev-setup/configs/nvim/ $HOME/.config/nvim
+
+# symlink the polybar directory
+ln -s $HOME/Developer/dev-setup/configs/polybar/ $HOME/.config/polybar
 
 # symlink the zshrc
 ln -s $HOME/Developer/dev-setup/configs/bash/bashrc $HOME/.zshrc

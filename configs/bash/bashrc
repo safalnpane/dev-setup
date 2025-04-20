@@ -69,6 +69,11 @@ alias reload="source ~/.zshrc"
 # Python is Python@3.12
 alias python=python3.12
 
+# workspace
+alias wswitch="ws --switch"
+alias wnew="ws -n"
+alias wlist="ws --list"
+
 
 # Exports
 export GPG_TTY=$(tty)
