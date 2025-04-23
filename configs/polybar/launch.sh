@@ -7,6 +7,6 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch polybar
-polybar -q workspaces -c $HOME/.config/polybar/config.ini &
-polybar -q date -c $HOME/.config/polybar/config.ini &
-polybar -q window -c $HOME/.config/polybar/config.ini &
+polybar -q main -c $HOME/.config/polybar/config.ini &
+# polybar -q date -c $HOME/.config/polybar/config.ini &
+# polybar -q window -c $HOME/.config/polybar/config.ini &

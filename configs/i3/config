@@ -6,12 +6,14 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id vmware-user-suid-wrapper
 
+# Picom
+exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
+
 # Background Image
 exec --no-startup-id feh --bg-scale $HOME/Pictures/keyboard.png
 
 # gaps to allow safe space for polybar
-gaps top 55
-gaps bottom 0
+gaps top 33
 gaps inner 5
 
 # Remove that ugly border with title on apps like firefox
@@ -133,6 +135,5 @@ client.background        #1e1e2e
 
 # launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
 
 exec --no-startup-id vmware-user
